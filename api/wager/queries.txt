@@ -1,0 +1,85 @@
+https://www.howtographql.com/graphql-python/4-authentication/
+
+query getWagers {
+  wagers {
+    id
+    duration
+    betId
+    placed
+    betType
+    spread
+    team {
+      id
+      cityName
+      teamName
+    }
+    vig
+    risk
+    collect
+    result
+  }
+}
+
+query getWager {
+  wager(id: 1) {
+    id
+    duration
+    betId
+    placed
+    betType
+    spread
+    team {
+      id
+      cityName
+      teamName
+    }
+    vig
+    risk
+    collect
+    result
+  }
+}
+
+query getUsers {
+  users {
+    id
+    username
+    email
+  }
+}
+
+query getMe {
+  me {
+    id
+    username
+  }
+}
+
+mutation createUser {
+  createUser(username: "jbutkovic", email: "joshbutkovic@gmail.com", password: "Elizabeth@4231!") {
+  	user {
+      id
+      username
+      email
+    }
+	}
+}
+
+mutation tokenAuth {
+  tokenAuth(username:"joshb_lv", password: "Elizabeth@4231!") {
+    token
+  }
+}
+
+mutation verifyToken {
+  verifyToken(token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Impvc2hiX2x2IiwiZXhwIjoxNTgwNTgxNzM3LCJvcmlnSWF0IjoxNTgwNTgxNDM3fQ.GuIbWpqzjkkQQhzmNLiqFjrxDAsroZyoGy9nO6yhlo8") {
+    payload
+  }
+}
+
+# mutation refreshToken {
+#   refreshToken(token: $token) {
+#     token
+#     payload
+#   }
+# }
