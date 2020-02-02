@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+// // Fonts
+// @font-face {
+//     font-family: 'Lato';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: url('/fonts/lato-v16-latin-regular.eot'); /* IE9 Compat Modes */
+//     src: local('Lato Regular'), local('Lato-Regular'),
+//         url('/fonts/lato-v16-latin-regular.eot?#iefix') format('embedded-opentype'),
+//         /* IE6-IE8 */ url('/fonts/lato-v16-latin-regular.woff2') format('woff2'),
+//         /* Super Modern Browsers */ url('/fonts/lato-v16-latin-regular.woff') format('woff'),
+//         /* Modern Browsers */ url('/fonts/lato-v16-latin-regular.ttf') format('truetype'),
+//         /* Safari, Android, iOS */ url('/fonts/lato-v16-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
+// }
+// /* lato-700 - latin */
+// @font-face {
+//     font-family: 'Lato';
+//     font-style: normal;
+//     font-weight: 700;
+//     src: url('/fonts/lato-v16-latin-700.eot'); /* IE9 Compat Modes */
+//     src: local('Lato Bold'), local('Lato-Bold'), url('/fonts/lato-v16-latin-700.eot?#iefix') format('embedded-opentype'),
+//         /* IE6-IE8 */ url('/fonts/lato-v16-latin-700.woff2') format('woff2'),
+//         /* Super Modern Browsers */ url('/fonts/lato-v16-latin-700.woff') format('woff'),
+//         /* Modern Browsers */ url('/fonts/lato-v16-latin-700.ttf') format('truetype'),
+//         /* Safari, Android, iOS */ url('/fonts/lato-v16-latin-700.svg#Lato') format('svg'); /* Legacy iOS */
+// }
+// /* oswald-regular - latin */
+// @font-face {
+//     font-family: 'Oswald';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: url('/fonts/oswald-v29-latin-regular.eot'); /* IE9 Compat Modes */
+//     src: local('/fonts/'), url('/fonts/oswald-v29-latin-regular.eot?#iefix') format('embedded-opentype'),
+//         /* IE6-IE8 */ url('/fonts/oswald-v29-latin-regular.woff2') format('woff2'),
+//         /* Super Modern Browsers */ url('/fonts/oswald-v29-latin-regular.woff') format('woff'),
+//         /* Modern Browsers */ url('/fonts/oswald-v29-latin-regular.ttf') format('truetype'),
+//         /* Safari, Android, iOS */ url('/fonts/oswald-v29-latin-regular.svg#Oswald') format('svg'); /* Legacy iOS */
+// }
+// /* oswald-600 - latin */
+// @font-face {
+//     font-family: 'Oswald';
+//     font-style: normal;
+//     font-weight: 600;
+//     src: url('/fonts/oswald-v29-latin-600.eot'); /* IE9 Compat Modes */
+//     src: local('/fonts/'), url('/fonts/oswald-v29-latin-600.eot?#iefix') format('embedded-opentype'),
+//         /* IE6-IE8 */ url('/fonts/oswald-v29-latin-600.woff2') format('woff2'),
+//         /* Super Modern Browsers */ url('/fonts/oswald-v29-latin-600.woff') format('woff'),
+//         /* Modern Browsers */ url('/fonts/oswald-v29-latin-600.ttf') format('truetype'),
+//         /* Safari, Android, iOS */ url('/fonts/oswald-v29-latin-600.svg#Oswald') format('svg'); /* Legacy iOS */
+// }
+
+// @import './colors.scss';
+
+// // Update Bulma's global variables
+// $family-sans-serif: 'Lato', sans-serif;
+// $grey-dark: $brown;
+// $grey-light: $beige-light;
+// $primary: $forest-green;
+// $info: $purple;
+// $link: $white;
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+
+// // Update some of Bulma's component variables
+// $body-family: $family-sans-serif;
+// $body-background-color: $light-gray;
+// $body-color: $black;
+// $body-font-size: 1rem;
+// $body-line-height: 1.55;
+// $control-border-width: 2px;
+// $input-border-color: transparent;
+// $input-shadow: none;
+
+// // Footer
+// $footer-background-color: $frog-green;
+
+// // Nav
+// $navbar-background-color: $frog-green;
+// $navbar-height: 2.75rem;
+// $navbar-item-color: $white;
+// $navbar-item-hover-color: $black;
+// $navbar-item-hover-background-color: $frog-green;
+
+// // Tags
+// $tag-background-color: $frog-green;
+// $tag-color: $white;
+
+@import '../node_modules/bulma/bulma.sass';
+
+// // After Bulma Imports
+// @import './animations.scss';
+// @import './buttons.scss';
+
+// Container Overrides
+div.container {
+    max-width: 1200px;
+    // animation: pageFade 150ms ease-in-out;
+}
+
+// // Header Font Overrides
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// .title,
+// .subtitle {
+//     font-family: 'Oswald', sans-serif;
+// }
