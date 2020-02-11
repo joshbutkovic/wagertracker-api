@@ -43,9 +43,8 @@ class Wager(models.Model):
         choices=RESULTS,
         default=None
     )
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
-    # user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    #
 
     def __str__(self):
         return str(self.id)

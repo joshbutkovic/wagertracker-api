@@ -1,20 +1,35 @@
-import React from 'react';
+import React, { useReducer, Dispatch } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Registration from './components/Registration';
-import Button from './components/Button';
+import { Provider } from './store/store';
+import { authReducer, initialAuthState, AuthState, AuthAction } from './store/reducers/authReducer';
+import MainMenu from './components/Layout/MainMenu/MainMenu';
+import Registration from './components/SignUp/SignUp';
+import Login from './components/Login/Login';
+import Welcome from './components/Welcome/Welcome';
 import './WagerTracker.css';
 
 export default function WagerTracker() {
-    const handleClick = () => {
-        console.log('click');
-    };
+    const useAuthState: [AuthState, Dispatch<AuthAction>] = useReducer(
+        authReducer,
+        initialAuthState,
+    );
 
     return (
-        <div className="WagerTracker">
-            <Button onClick={handleClick} classes="is-primary" />
-            {/* <Switch>
-                <Route path="/registration" component={Registration} exact />
-            </Switch> */}
-        </div>
+        <Provider value={useAuthState}>
+            <div className="WagerTracker">
+                <div className="columns">
+                    <div className="column is-2" style={{ paddingRight: '0' }}>
+                        <MainMenu />
+                    </div>
+                    <div className="column" style={{ paddingLeft: '0' }}>
+                        <Switch>
+                            <Route path="/" component={Welcome} exact />
+                            <Route path="/registration" component={Registration} exact />
+                            <Route path="/login" component={Login} exact />
+                        </Switch>
+                    </div>
+                </div>
+            </div>
+        </Provider>
     );
 }
