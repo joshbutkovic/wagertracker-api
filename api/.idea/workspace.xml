@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0896e7eb-9be6-4e60-9b6c-d87ec1c61a9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a18b99ea-080f-43dc-98d3-4d5c97a32cc9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a18b99ea-080f-43dc-98d3-4d5c97a32cc9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wager/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/wager/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/../web/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/.storybook/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wager/queries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wager/queries.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../web/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/WagerTracker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/WagerTracker.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/components/Button.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/components/Button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/components/Registration.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/stories/0-Welcome.stories.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/stories/1-Button.stories.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/stories/button.stories.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/store/reducers/authReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/store/reducers/authReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/store/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../web/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,6 +106,11 @@
       <workItem from="1580357635958" duration="13415000" />
       <workItem from="1581172301301" duration="1235000" />
       <workItem from="1581181073365" duration="679000" />
+      <workItem from="1581390473227" duration="152000" />
+      <workItem from="1581646457903" duration="4638000" />
+      <workItem from="1581788228808" duration="86000" />
+      <workItem from="1581788345770" duration="6191000" />
+      <workItem from="1581991238394" duration="295000" />
     </task>
     <servers />
   </component>
@@ -116,17 +118,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="440" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581788289698">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="440" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581788289698" />
+    <state x="528" y="279" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581788302692">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="528" y="279" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581788302692" />
     <state x="579" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580574083492">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="579" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1580574083492" />
-    <state x="101" y="123" width="1480" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580522861239">
+    <state x="101" y="123" width="1480" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1581798444966">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="101" y="123" width="1480" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1580522861239" />
-    <state x="517" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1581390473836">
+    <state x="101" y="123" width="1480" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581798444966" />
+    <state x="517" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1581788349000">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="517" y="369" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581390473836" />
+    <state x="517" y="369" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581788349000" />
   </component>
 </project>

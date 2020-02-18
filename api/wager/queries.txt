@@ -1,5 +1,7 @@
 https://www.howtographql.com/graphql-python/4-authentication/
 
+https://django-graphql-jwt.domake.io/en/latest/refresh_token.html#long-running-refresh-tokens
+
 query getWagers {
   wagers {
     id
@@ -68,11 +70,15 @@ mutation createUser {
 mutation tokenAuth {
   tokenAuth(username:"joshb_lv", password: "Elizabeth@4231!") {
     token
+    user {
+      id
+      username
+    }
   }
 }
 
 mutation verifyToken {
-  verifyToken(token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Impvc2hiX2x2IiwiZXhwIjoxNTgwNTgxNzM3LCJvcmlnSWF0IjoxNTgwNTgxNDM3fQ.GuIbWpqzjkkQQhzmNLiqFjrxDAsroZyoGy9nO6yhlo8") {
+  verifyToken(token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Impvc2hiX2x2IiwiZXhwIjoxNTgxNzkyNjExLCJvcmlnSWF0IjoxNTgxNzg5MDExfQ.fRScDCzmggOQMHs3_s_GuTxHkLhQcm7NgSlIZSvceUE") {
     payload
   }
 }

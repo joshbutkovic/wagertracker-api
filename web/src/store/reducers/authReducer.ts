@@ -1,6 +1,7 @@
 export interface AuthState {
-    loggedIn: boolean;
+    token: string;
     username: string;
+    id: number | undefined;
     error: string;
 }
 
@@ -10,8 +11,9 @@ export interface AuthAction {
 }
 
 export const initialAuthState: AuthState = {
-    loggedIn: false,
+    token: '',
     username: '',
+    id: undefined,
     error: '',
 };
 
@@ -19,20 +21,23 @@ export const authReducer = (state: AuthState, action: AuthAction) => {
     switch (action.type) {
         case 'LOGIN':
             return {
-                loggedIn: true,
+                token: action.payload.token,
                 username: action.payload.username,
+                id: action.payload.id,
                 error: '',
             };
         case 'LOGIN_ERROR':
             return {
-                loggedIn: false,
+                token: '',
                 username: '',
+                id: undefined,
                 error: action.payload.error,
             };
         case 'LOGOUT':
             return {
-                loggedIn: false,
+                token: '',
                 username: '',
+                id: undefined,
                 error: '',
             };
         default:
