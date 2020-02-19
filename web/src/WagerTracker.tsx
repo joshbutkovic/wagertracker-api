@@ -1,7 +1,7 @@
-import React, { useReducer, Dispatch } from 'react';
-import { Route, Switch, Router, useHistory } from 'react-router-dom';
-import { Provider } from './store/store';
-import { authReducer, initialAuthState, AuthState, AuthAction } from './store/reducers/authReducer';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { Route, Switch, useHistory } from 'react-router-dom';
+import store from './store/store';
 import MainMenu from './components/Layout/MainMenu/MainMenu';
 import Registration from './components/SignUp/SignUp';
 import Login from './components/Login/Login';
@@ -11,15 +11,10 @@ import './WagerTracker.css';
 import AuthenticatedRoute from './components/AuthenticatedRoute';
 
 export default function WagerTracker() {
-    const useAuthState: [AuthState, Dispatch<AuthAction>] = useReducer(
-        authReducer,
-        initialAuthState,
-    );
-
     let history = useHistory();
 
     return (
-        <Provider value={useAuthState}>
+        <Provider store={store}>
             <div className="WagerTracker">
                 <div className="columns">
                     <div className="column is-2" style={{ paddingRight: '0' }}>

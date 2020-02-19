@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect, RouteProps } from 'react-router';
-import authContext from '../store/store';
+import authContext from '../store-old/store';
 
 function AuthenticatedRoute({ component: Component, ...props }: RouteProps) {
     if (!Component) return null;

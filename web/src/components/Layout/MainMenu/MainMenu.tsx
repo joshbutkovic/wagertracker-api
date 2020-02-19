@@ -1,16 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
-import authContext from '../../../store/store';
 import './MainMenu.scss';
 
 function MainMenu() {
-    const [state, dispatch] = useContext<any>(authContext);
     let history = useHistory();
 
     const handleClick = () => {
-        dispatch({
-            type: 'LOGOUT',
-        });
         history.push('/');
     };
 
