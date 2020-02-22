@@ -1,13 +1,9 @@
 import React from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './MainMenu.scss';
 
 function MainMenu() {
-    let history = useHistory();
-
-    const handleClick = () => {
-        history.push('/');
-    };
+    const handleClick = () => {};
 
     return (
         <aside className="menu">
@@ -29,7 +25,7 @@ function MainMenu() {
                     <NavLink to="/login">Login</NavLink>
                 </li>
                 <li onClick={handleClick}>
-                    <a>Sign Out</a>
+                    <button>Sign Out</button>
                 </li>
             </ul>
         </aside>

@@ -12,7 +12,7 @@ export interface DispatchAction extends Action {
     payload: Partial<ReduxAuth>;
 }
 
-export const setAuth = (auth: ReduxAuth, dispatch: Dispatch<DispatchAction>, history: History) => {
+export const setAuth = (auth: ReduxAuth, dispatch: Dispatch<DispatchAction>) => {
     const { id, token, username } = auth;
     dispatch({
         type: 'LOGIN',
@@ -22,5 +22,17 @@ export const setAuth = (auth: ReduxAuth, dispatch: Dispatch<DispatchAction>, his
             username,
         },
     });
-    history.push('dashboard');
 };
+
+// export const setAuth = (auth: ReduxAuth, dispatch: Dispatch<DispatchAction>, history: History) => {
+//     const { id, token, username } = auth;
+//     dispatch({
+//         type: 'LOGIN',
+//         payload: {
+//             id,
+//             token,
+//             username,
+//         },
+//     });
+//     history.push('dashboard');
+// };

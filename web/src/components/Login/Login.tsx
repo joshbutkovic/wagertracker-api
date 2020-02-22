@@ -14,7 +14,20 @@ interface LoginForm {
     password: string;
 }
 
-function Login() {
+interface RouterState {
+    message: string;
+}
+
+interface State {
+    state: RouterState;
+}
+
+export interface RouterProps {
+    location: State;
+}
+
+function Login(props: RouterProps) {
+    const { state } = props.location;
     const [loginErrorMessage, setLoginErrorMessage] = useState<string>('');
     const token = useSelector((state: Auth) => state.auth.token);
     const { register, handleSubmit, errors } = useForm<LoginForm>();
@@ -31,7 +44,6 @@ function Login() {
                 },
             })
             .then(res => {
-                console.log(res);
                 const { errors, data } = res.data;
                 if (errors && errors[0].message) {
                     setLoginErrorMessage(errors[0].message);
@@ -44,16 +56,19 @@ function Login() {
                             username: data.tokenAuth.user.username,
                         },
                         dispatch,
-                        history,
                     );
+                    history.push('dashboard');
                 }
             });
     });
 
-    return !token ? (
+    if (token) return <Redirect to="dashboard" />;
+
+    return (
         <PageSection container>
             <form onSubmit={onSubmit} className="box column is-6 is-offset-3">
                 <h1 className="is-size-5" style={{ marginBottom: '1rem' }}>
+                    {state && state.message}
                     {loginErrorMessage ? 'Enter valid credentials' : 'Please Login'}
                 </h1>
                 <div className="field">
@@ -87,8 +102,6 @@ function Login() {
                 </button>
             </form>
         </PageSection>
-    ) : (
-        <Redirect to="/dashboard" />
     );
 }
 

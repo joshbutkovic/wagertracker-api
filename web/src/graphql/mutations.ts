@@ -7,3 +7,9 @@ export const tokenAuth = `mutation tokenAuth($username:String!, $password:String
             }
         }
     }`;
+
+export const verifyToken = `mutation verifyToken($token:String!) {
+    verifyToken(token: $token) {
+        payload
+    }
+}`;

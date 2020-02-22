@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import store from './store/store';
 import MainMenu from './components/Layout/MainMenu/MainMenu';
 import Registration from './components/SignUp/SignUp';
@@ -11,8 +11,6 @@ import './WagerTracker.css';
 import AuthenticatedRoute from './components/AuthenticatedRoute';
 
 export default function WagerTracker() {
-    let history = useHistory();
-
     return (
         <Provider store={store}>
             <div className="WagerTracker">
