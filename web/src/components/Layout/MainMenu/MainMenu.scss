@@ -2,4 +2,21 @@
     border: 1px solid #141414;
     height: 100vh;
     padding: 1rem;
+    .link-button {
+        border-radius: 2px;
+        color: #4a4a4a;
+        display: block;
+        padding: 0.5em 0.75em;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1rem;
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        text-align: left;
+        &:hover {
+            background-color: whitesmoke;
+            color: #363636;
+        }
+    }
 }

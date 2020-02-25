@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { useHistory, Redirect } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useMutation } from '@apollo/react-hooks';
+import { useApolloClient } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
 import PageSection from '../Layout/PageSection';
 import { BASE } from '../../config/urls';
 import { tokenAuth } from '../../graphql/mutations';
-import { Auth } from '../../store/reducers/authReducer';
-import { setAuth } from '../../store/actions/authActions';
 
 interface LoginForm {
     username: string;
@@ -26,43 +25,46 @@ export interface RouterProps {
     location: State;
 }
 
+const LOGIN = gql`
+    mutation tokenAuth($username: String!, $password: String!) {
+        tokenAuth(username: $username, password: $password) {
+            token
+            user {
+                id
+                username
+            }
+        }
+    }
+`;
+
 function Login(props: RouterProps) {
     const { state } = props.location;
     const [loginErrorMessage, setLoginErrorMessage] = useState<string>('');
-    const token = useSelector((state: Auth) => state.auth.token);
     const { register, handleSubmit, errors } = useForm<LoginForm>();
+    const [login, { data }] = useMutation(LOGIN);
     const history = useHistory();
-    const dispatch = useDispatch();
+    const client = useApolloClient();
 
     const onSubmit = handleSubmit(({ username, password }) => {
-        axios
-            .post(BASE, {
-                query: tokenAuth,
-                variables: {
-                    username,
-                    password,
-                },
-            })
-            .then(res => {
-                const { errors, data } = res.data;
-                if (errors && errors[0].message) {
-                    setLoginErrorMessage(errors[0].message);
-                }
-                if (data && data.tokenAuth) {
-                    setAuth(
-                        {
-                            id: data.tokenAuth.user.id,
-                            token: data.tokenAuth.token,
-                            username: data.tokenAuth.user.username,
-                        },
-                        dispatch,
-                    );
-                    history.push('dashboard');
-                }
-            });
+        login({ variables: { username, password } });
     });
 
-    if (token) return <Redirect to="dashboard" />;
+    // const checkCookieForValidToken = () => {
+    //     if (typeof cookies.verifyToken !== 'undefined') {
+    //         if (cookies.verifyToken.payload.exp < new Date().getTime() / 1000) {
+    //             removeCookie('verifyToken');
+    //             return false;
+    //         } else {
+    //             return true;
+    //         }
+    //     }
+    // };
+
+    // if (token || checkCookieForValidToken()) return <Redirect to="dashboard" />;
+    if (data && data.tokenAuth.token) {
+        client.writeData({ data: { tokenAuth: data.tokenAuth } });
+        return <Redirect to="/dashboard" />;
+    }
 
     return (
         <PageSection container>
